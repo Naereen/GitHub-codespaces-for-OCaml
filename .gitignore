@@ -11,6 +11,11 @@
 *.cmxs
 *.cmxa
 
+# Binaries
+*.exe
+*.byte
+*.bc
+
 # ocamlbuild working directory
 _build/
 
