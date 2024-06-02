@@ -9,7 +9,6 @@
             "type": "cppdbg",
             "request": "launch",
             // "program": "${command:AskProgram}",
-            // "program": "${workspaceFolder}/hello/hello.c.exe",
             "program": "${workspaceRoot}/${relativeFile}.exe",
             "args": [],
             "stopAtEntry": false,
@@ -18,18 +17,19 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "/usr/bin/gdb",
-            // "setupCommands": [
-            //     {
-            //         "description": "Activer l'impression en mode Pretty pour gdb",
-            //         "text": "-enable-pretty-printing",
-            //         "ignoreFailures": true
-            //     },
-            //     // {
-            //     //     "description": "Définir la version désassemblage sur Intel",
-            //     //     "text": "-gdb-set disassembly-flavor intel",
-            //     //     "ignoreFailures": true
-            //     // }
-            // ]
+            "preLaunchTask": "C/C++: gcc générer le fichier actif",
+            "setupCommands": [
+                {
+                    "description": "Activer l'impression en mode Pretty pour gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Définir la version désassemblage sur Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
         },
         {
             "name": "OCaml earlybird (pick a file)",
@@ -37,22 +37,20 @@
             "request": "launch",
             "program": "${command:AskProgram}",
             "onlyDebugGlob": "<${workspaceFolder}/**/*>",
-            "stopOnEntry": false,
+            "stopOnEntry": true,
             "console": "integratedTerminal",
             "yieldSteps": 1024,
-            // "cwd": "${workspaceFolder}/_build/default/hello/"
             "cwd": "${workspaceFolder}"
         },
         {
             "name": "OCaml current file",
             "type": "ocaml.earlybird",
             "request": "launch",
-            "stopOnEntry": false,
+            "stopOnEntry": true,
             "console": "integratedTerminal",
             "program": "${workspaceFolder}/_build/default/${relativeFileDirname}/${fileBasenameNoExtension}.bc",
             "onlyDebugGlob": "<${workspaceFolder}/**/*>",
             "yieldSteps": 1024,
-            // "cwd": "${workspaceFolder}/_build/default/hello/"
             "cwd": "${workspaceFolder}"
         }
     ]

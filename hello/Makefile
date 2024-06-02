@@ -1,10 +1,13 @@
 all:	all_c all_ml
 
+clean:
+	mv -vf hello.cmi hello.cmo hello.cmx hello.o hello.exe hello.c.exe hello.ml.exe /tmp/
+
 # Règles pour la compilation en C
 all_c:	build_c run_c
 
 hello.c.exe:	hello.c
-	gcc -Wall -Wextra -Werror -Wvla -std=c99 -fsanitize=address,undefined -pedantic -O0 -o hello.c.exe hello.c
+	gcc -Wall -Wextra -Werror -Wvla -std=c99 -fsanitize=address,undefined -pedantic -O0 -ggdb3 -o hello.c.exe hello.c
 
 build_c:	hello.c.exe
 

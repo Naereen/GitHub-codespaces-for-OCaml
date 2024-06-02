@@ -1,0 +1,127 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc générer le fichier actif",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-Werror",
+                "-std=c99",
+                "-pedantic",
+                // "-fsanitize=address", // LeakSanitizer does not work under ptrace (strace, gdb, etc)
+                // "-fsanitize=undefined",
+                "-fdiagnostics-color=always",
+                "-O0",
+                "-ggdb3",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.c.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "compilateur : /usr/bin/gcc"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: exécuter le binaire du fichier actif",
+            "command": "/usr/bin/env",
+            "args": [
+                "${fileDirname}/${fileBasenameNoExtension}.c.exe",
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "test",
+            "detail": "compilateur : /usr/bin/gcc"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc-12 générer le fichier actif",
+            "command": "/usr/bin/gcc-12",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tâche générée par le débogueur."
+        },
+        {
+            "type": "process",
+            "label": "OCaml générer le fichier actif (ocamlopt)",
+            "command": "/home/opam/.opam/4.14/bin/ocamlopt.opt",
+            "args": [
+                "-O3",
+                "${file}",
+                "-g",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tâche écrite à la main."
+        },
+        {
+            "type": "process",
+            "label": "OCaml générer le fichier actif (ocamlc)",
+            "command": "/home/opam/.opam/4.14/bin/ocamlc.opt",
+            "args": [
+                "${file}",
+                "-g",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tâche écrite à la main."
+        },
+        {
+            "type": "process",
+            "label": "OCaml exécuter le fichier actif",
+            "command": "/home/opam/.opam/4.14/bin/ocaml",
+            "args": [
+                "${file}",
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "detail": "Tâche écrite à la main."
+        }
+    ]
+}
