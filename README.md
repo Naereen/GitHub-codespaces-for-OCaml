@@ -7,6 +7,13 @@ Un template pour utiliser [GitHub codespaces (https://github.dev)](https://githu
 
 ![Capture d’écran_2024-06-02_21-53-46](https://github.com/Naereen/GitHub-codespaces-for-OCaml/assets/11994719/d2e0c3ef-820d-423d-94b2-001761fbce04)
 
+## L'exécution de code OCaml est possible via `utop`
+Dans le terminal embarqué, il faut lancer `utop`, puis `#use "hello.ml";;` exécute le code du fichier [`hello.ml`](hello/hello.ml).
+
+## Le débuggage est possible aussi !
+Avec [cette extension OCaml pour VSCode](https://marketplace.visualstudio.com/items?itemName=ocamllabs.ocaml-platform#debugging-ocaml-programs-experimental).
+Il faut utiliser la configuration de débug `hello` pour le fichier [`hello.ml`](hello/hello.ml).
+
 ## Documentation ?
 Voir cette page : <https://docs.github.com/fr/codespaces/overview>
 
