@@ -27,9 +27,13 @@ Ou tout faire à la main depuis un terminal...
 Dans le terminal embarqué, aller dans le dossier `hello/` (`cd hello/`), puis il faut lancer `utop`.
 Un fois `utop` lancé, la commande `#use "hello.ml";;` exécute et interpréte le code du fichier [`hello.ml`](hello/hello.ml), avec les valeurs et les types joliment affichés.
 
+![Démo : utilisation de utop en OCaml ](screenshots/demo_utop.pn)
+
 ### Débugguer le programme `hello.ml` avec OCaml ?
 Avec [cette extension OCaml pour VSCode](https://marketplace.visualstudio.com/items?itemName=ocamllabs.ocaml-platform#debugging-ocaml-programs-experimental).
 Il faut utiliser la configuration de débug `"OCaml current file"` pour le fichier [`hello.ml`](hello/hello.ml).
+
+![Démo : débug en OCaml](screenshots/demo_debug_ocaml.png)
 
 ### Compiler et exécuter
 Aussi possible ! Avec la règle de lancement `"OCaml générer le fichier actif (ocamlopt)"` ou `"OCaml exécuter le fichier actif"`.
@@ -45,10 +49,14 @@ Il faut travailler dans le fichier `hello.c`, par défaut.
 ### Compiler en C avec un `Makefile`
 Ce [`Makefile`](hello/Makefile) prévoit tout ce qu'il faut normalement, pour un usage basique.
 
+![Démo : utilisation du Makefile en C](screenshots/demo_makefile_c.png)
+
 ### Débugguer en C
 C'est aussi possible. Avec la règle de débuggage "(gdb) Lancer".
 
-### Compiler et exécuter
+![Démo : débug en C](screenshots/demo_debug_c.png)
+
+### Compiler et exécuter depuis le menu
 Aussi possible ! Avec la règle de lancement "C/C++: exécuter le binaire du fichier actif" ou "C/C++: gcc générer le fichier actif".
 Il faut ouvrir la palette, puis "run tasks" > choisir la tâche.
 
