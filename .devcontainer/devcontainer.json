@@ -8,14 +8,16 @@
         "vscode": {
             "extensions": [
                 "ocamllabs.ocaml-platform",
-                "ms-vscode.test-adapter-converter"
+                "ms-vscode.test-adapter-converter",
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.makefile-tools"
             ]
         }
     },
 
     "postCreateCommand": "",
     "postAttachCommand": {
-        "server": "dune build --watch"
+        // "server": "dune build --watch"
       }
 
 }
