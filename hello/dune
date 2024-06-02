@@ -3,5 +3,6 @@
  (libraries   core)
  (preprocess (pps ppx_jane))
  (flags     :standard -w -32)
+ (modes byte exe)
  (map_workspace_root false)
 )
