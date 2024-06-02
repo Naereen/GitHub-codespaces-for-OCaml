@@ -2,7 +2,7 @@ FROM ocaml/opam:debian-ocaml-4.14
 
 USER root
 
-RUN apt update && apt-get install -y zsh direnv && apt -y clean
+RUN apt update && apt-get install -y zsh direnv gdb && apt -y clean
 
 USER opam
 
