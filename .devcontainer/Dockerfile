@@ -6,4 +6,4 @@ RUN apt update && apt-get install -y zsh direnv && apt -y clean
 
 USER opam
 
-RUN opam install -y dune ocamlformat odoc ocp-indent merlin utop base core ocaml-lsp-server ppx_jane js_of_ocaml atdgen
+RUN opam install -y dune ocamlformat odoc ocp-indent merlin utop base core ocaml-lsp-server ppx_jane js_of_ocaml atdgen earlybird
