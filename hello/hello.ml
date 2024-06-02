@@ -9,6 +9,6 @@ let rec fact n =
 ;;
 
 (** Affichage de la fonction Factorielle. *)
-for n = 0 to 10 do
+let () = for n = 0 to 10 do
   Printf.printf "fact %i = %i\n" n (fact n)
 done;;
